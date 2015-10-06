@@ -33,11 +33,14 @@ class TimelinesController < ApplicationController
       if @timeline.update_attributes(timeline_params)
         redirect_to '/'
       else 
-      render :edit
-        end
+        render :edit
+      end
     end
 
   	def destroy
+      @timeline = Timeline.find(params[:id])
+      @timeline.destroy
+      redirect_to '/'
   	end
 
   	private

@@ -1,9 +1,9 @@
 <h2><%= @timeline.name %></h2>
-<h4>Creator</h4>
-<p><%= @timeline.creator %></p>
 <h4>Summary</h4>
 <p><%= @timeline.summary %></p>
+<h4>Creator</h4>
+<p><%= @timeline.creator %></p>
 
 <button><%= link_to "Edit Timeline", edit_timeline_path %></button>
 <button><%= link_to "Delete Timeline", @timeline, method: :delete %></button>
-<button><%= link_to "Go Back", :back %></button>
+<button><%= link_to "Go Back", timelines_path %></button>
