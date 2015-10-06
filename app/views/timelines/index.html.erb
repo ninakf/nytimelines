@@ -1,7 +1,7 @@
-<h1>NYTimelines</h1>
-<% @timelines.each do |timeline| %> 
-<% end %>
+<% @timelines.each do |timeline| %>
+	<%= timeline.name %><br>
+<% end %><br>
 
 <button>
-<%= link_to "Add Timeline", new_timeline_path %>
+<%= link_to "Create Timeline", new_timeline_path %>
 </button>

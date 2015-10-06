@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
     root to: "timelines#index" 
-    resources :timelines
+    resources :timelines 
 end

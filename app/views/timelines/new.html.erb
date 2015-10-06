@@ -1,9 +1,11 @@
 <h2>Create Timeline</h2>
 
-<%= simple_form_for @timeline do |timeline| %>
-	<%= form.input :name, placeholder: 'Name' %>
-	<%= form.input :summary, placeholder: 'Summary' %>
+<%= simple_form_for @timeline do |form| %>
+	<%= form.input :name, placeholder: 'Name' %><br>
+	<%= form.input :summary, placeholder: 'Summary' %><br>
+<%= form.input :creator, placeholder: 'Creator' %><br>
 	<%= form.button :submit %> 
 <% end %><br>
+
 
 <button><%= link_to "Go Back", root_path %></button>
