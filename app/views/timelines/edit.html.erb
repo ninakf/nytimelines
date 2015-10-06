@@ -1,4 +1,4 @@
-<h2>Create Timeline</h2>
+<h2>Edit Timeline</h2>
 
 <%= simple_form_for @timeline do |form| %>
 	<%= form.input :name, placeholder: 'Name' %><br>
@@ -7,4 +7,4 @@
 	<%= form.button :submit %> 
 <% end %>
 
-<button><%= link_to "Go Back", root_path %></button>
+<button><%= link_to "Go Back", timeline_path %></button>

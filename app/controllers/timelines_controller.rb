@@ -21,13 +21,21 @@ class TimelinesController < ApplicationController
   	end
 
   	def show
+  		@timeline = Timeline.find(params[:id])
   	end
 
   	def edit
+      @timeline = Timeline.find(params[:id])
   	end
 
   	def update
-  	end
+      @timeline = Timeline.find(params[:id])
+      if @timeline.update_attributes(timeline_params)
+        redirect_to '/'
+      else 
+      render :edit
+        end
+    end
 
   	def destroy
   	end

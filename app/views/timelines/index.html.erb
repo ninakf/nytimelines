@@ -1,10 +1,6 @@
 <% @timelines.each do |timeline| %>
-	<%= timeline.name %><br>
+	<%= link_to timeline.name, timeline_path(timeline) %><br>
 <% end %><br>
-
-<button>
-<%= link_to "Create Timeline", new_timeline_path %>
-</button>
 
 <button>
 <%= link_to "Go Back", root_path %>
