@@ -4,6 +4,8 @@
 <h4>Creator</h4>
 <p><%= @timeline.creator %></p>
 
+<%-# articles here -%>
+
 <button><%= link_to "Edit Timeline", edit_timeline_path %></button>
 <button><%= link_to "Delete Timeline", @timeline, method: :delete %></button>
 <button><%= link_to "Go Back", timelines_path %></button>
