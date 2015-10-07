@@ -3,6 +3,10 @@ class TimelinesController < ApplicationController
 	def welcome
 	end
 
+ # put article stuff here 
+ # need article model
+
+
 	def index
   		@timelines = Timeline.all
 	end

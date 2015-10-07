@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006174309) do
+ActiveRecord::Schema.define(version: 20151007183929) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "author"
+    t.integer  "date"
+    t.integer  "timeline_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "timelines", force: :cascade do |t|
     t.string   "name"
