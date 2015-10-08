@@ -1,24 +1,21 @@
 class TimelinesController < ApplicationController
 
-	def welcome
-	end
+	 def welcome
+	 end
 
- # put article stuff here 
- # need article model
-
-
-	def index
+   def index
   		@timelines = Timeline.all
-	end
+	 end
 
-	def new		
-		@timeline = Timeline.new
-	end
+	  def new		
+		  @timeline = Timeline.new
+      @articles = Article.all
+	  end
 
   	def create
     	@timeline = Timeline.new(timeline_params)
     	if @timeline.save
-      		redirect_to '/'
+      		redirect_to timelines_path
     	else
       		render :new
     	end
@@ -26,6 +23,7 @@ class TimelinesController < ApplicationController
 
   	def show
   		@timeline = Timeline.find(params[:id])
+      @articles = @timeline.articles
   	end
 
   	def edit
@@ -35,7 +33,7 @@ class TimelinesController < ApplicationController
   	def update
       @timeline = Timeline.find(params[:id])
       if @timeline.update_attributes(timeline_params)
-        redirect_to '/'
+        redirect_to timelines_path
       else 
         render :edit
       end
@@ -51,7 +49,7 @@ class TimelinesController < ApplicationController
 
   	def timeline_params
       	params.require(:timeline).permit(
-      		:name, :summary, :creator
+      		:query, :name, :summary, :creator
       	)
     end
 

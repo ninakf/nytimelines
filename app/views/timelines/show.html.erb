@@ -1,10 +1,20 @@
 <h2><%= @timeline.name %></h2>
+
 <h4>Summary</h4>
 <p><%= @timeline.summary %></p>
+
 <h4>Creator</h4>
 <p><%= @timeline.creator %></p>
 
-<%-# articles here -%>
+<h4>Query</h4>
+<p><%= @timeline.query %></p>
+
+<h4>Articles</h4>
+<% @articles.each do |article| %>
+	<%= article.name %><br>
+	<%= article.author %><br>
+	<%= article.date %><br><br>
+<% end %>
 
 <button><%= link_to "Edit Timeline", edit_timeline_path %></button>
 <button><%= link_to "Delete Timeline", @timeline, method: :delete %></button>
