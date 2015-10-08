@@ -9,11 +9,11 @@ class TimelinesController < ApplicationController
 
 	  def new		
 		  @timeline = Timeline.new
-      @articles = Article.all
 	  end
 
   	def create
     	@timeline = Timeline.new(timeline_params)
+      @articles = Article.search(params[:query])
     	if @timeline.save
       		redirect_to timelines_path
     	else

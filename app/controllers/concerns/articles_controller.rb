@@ -1,10 +1,9 @@
 class ArticlesController < ApplicationController
-  def index
-    @articles = Article.all
+  def search
     if params[:query]
-      @articles = Article.search(params[:query]).order("date DESC")
+      @articles = Article.search(params[:query])
     else
-      @articles = Article.all.order("date DESC")
+      render :new
     end
   end
  end
