@@ -16,7 +16,7 @@ class TimelinesController < ApplicationController
 
       @articles = Article.search(params["timeline"]["query"])
     	if @timeline.save
-      		redirect_to articles_path
+      		redirect_to articles_path(timeline_params)
     	else
       		render :new
     	end
@@ -45,8 +45,6 @@ class TimelinesController < ApplicationController
       @timeline.destroy
       redirect_to '/'
   	end
-
-  	private
 
   	def timeline_params
       	params.require(:timeline).permit(

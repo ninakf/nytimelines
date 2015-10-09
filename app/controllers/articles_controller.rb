@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
   end
  
   def index
-  	@articles = Article.all
+  	puts params 
+  	@articles = Article.search(params[:query])
   end
 
  end

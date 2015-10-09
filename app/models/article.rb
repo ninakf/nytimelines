@@ -17,13 +17,6 @@ class Article < ActiveRecord::Base
 		
 		articles = []
 
-		puts "Parsed Body"
-		puts parsed_body 
-		puts "Parsed Body Response"
-		puts parsed_body["response"]
-		puts "Parsed Body Docs"
-		puts parsed_body["response"]["docs"]
-
 		parsed_body["response"]["docs"].each do |doc|
 			article = Article.create({:name => doc["headline"], :author => doc["byline"], :date => doc["pub_date"]})
 			articles << article

@@ -1,15 +1,12 @@
 <h2>Create Timeline</h2>
-<p>Search the archive for articles to display on your timeline.</p>
-<%= simple_form_for @timeline do |form| %>
-  <%= form.input :query, placeholder: 'Query' %><br>
-  <%= form.submit "Search" %> 
-<% end %><br>
 
+<p>Name and summarize your timeline, then search the archive for articles to display on your timeline.</p>
 <%= simple_form_for @timeline do |form| %>
 	<%= form.input :name, placeholder: 'Name' %><br>
 	<%= form.input :summary, placeholder: 'Summary' %><br>
 	<%= form.input :creator, placeholder: 'Creator' %><br>
-	<%= form.submit "Create Timeline" %> 
+  	<%= form.input :query, placeholder: 'Query' %><br>
+  	<%= form.submit "Search" %> 
 <% end %><br>
 
 <button><%= link_to "Go Back", root_path %></button>
