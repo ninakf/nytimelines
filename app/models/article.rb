@@ -7,7 +7,8 @@ class Article < ActiveRecord::Base
 	end
 
 	def self.search (query)
-		url = URI.parse("http://api.nytimes.com/svc/search/v2/articlesearch.json?q=#{query}&api-key=sample-key")
+		url = URI.parse("http://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + query + "&api-key=sample-key")
+		puts url
 		req = Net::HTTP::Get.new(url.to_s)
 		res = Net::HTTP.start(url.host, url.port) {|http|
   			http.request(req)
