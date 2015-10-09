@@ -12,14 +12,14 @@ class TimelinesController < ApplicationController
 	  end
 
   	def create
-    	@timeline = Timeline.new(timeline_params)
+    	@timeline = Timeline.create(timeline_params)
 
-      @articles = Article.search(params["timeline"]["query"])
-    	if @timeline.save
-      		redirect_to articles_path(timeline_params)
-    	else
-      		render :new
-    	end
+      @articles = Article.search(params["timeline"]["query"], @timeline)
+      if @timeline.save!
+        redirect_to timeline_path(@timeline)
+      else
+        render :new
+      end
   	end
 
   	def show
