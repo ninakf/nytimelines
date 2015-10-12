@@ -7,4 +7,11 @@
 	<%= form.button :submit %> 
 <% end %>
 
+<h4>Articles</h4>
+<% @articles.each do |article| %>
+	<%= article.name %><br>
+	<%= article.author %><br>
+	<%= article.date %><br><br>
+<% end %>
+
 <button><%= link_to "Go Back", timeline_path %></button>

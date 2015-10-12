@@ -29,10 +29,12 @@ class TimelinesController < ApplicationController
 
   	def edit
       @timeline = Timeline.find(params[:id])
+      @articles = @timeline.articles
   	end
 
   	def update
       @timeline = Timeline.find(params[:id])
+      @articles = @timeline.articles
       if @timeline.update_attributes(timeline_params)
         redirect_to timelines_path
       else 
