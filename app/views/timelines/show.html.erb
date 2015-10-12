@@ -8,9 +8,9 @@
 
 <h4>Articles</h4>
 <% @articles.each do |article| %>
-	<%= article.name %><br>
+	<%= article.date %><br>
 	<%= article.link %><br>
-	<%= article.date %><br><br>
+	<%= article.name %><br><br>
 <% end %>
 
 <button><%= link_to "Edit Timeline", edit_timeline_path %></button>
