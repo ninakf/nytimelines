@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
 		articles = []
 
 		parsed_body["response"]["docs"].each do |doc|
-			article = Article.create({:name => doc["headline"], :author => doc["byline"], :date => doc["pub_date"], :timeline_id => timeline.id})
+			article = Article.create({:name => doc["headline"], :author => doc["byline"], :date => doc["pub_date"], :link => doc["web_url"], :timeline_id => timeline.id})
 			articles << article
 		end
 
