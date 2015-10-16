@@ -12,4 +12,10 @@ class ArticlesController < ApplicationController
   	@articles = Article.search(params[:query])
   end
 
+  def destroy
+      @article = Article.search(params[:query])
+      @article.destroy
+      redirect_to '/'
+  end
+
  end

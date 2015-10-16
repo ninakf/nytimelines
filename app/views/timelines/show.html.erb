@@ -10,8 +10,9 @@
 <% @articles.each do |article| %>
 	<%= article.date %><br>
 	<%= article.link %><br>
-	<%= article.name %><br><br>
-<% end %>
+	<%= article.name %><br>
+	<button><%= link_to "Remove", @article, method: :delete %></button><br>
+<% end %><br>
 
 <button><%= link_to "Edit Timeline", edit_timeline_path %></button>
 <button><%= link_to "Delete Timeline", @timeline, method: :delete %></button>
