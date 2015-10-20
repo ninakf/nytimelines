@@ -25,6 +25,7 @@ class TimelinesController < ApplicationController
   	def show
   		@timeline = Timeline.find(params[:id])
       @articles = @timeline.articles
+      @arti
   	end
 
   	def edit
@@ -45,7 +46,10 @@ class TimelinesController < ApplicationController
   	def destroy
       @timeline = Timeline.find(params[:id])
       @timeline.destroy
-      redirect_to '/'
+        redirect_to '/'
+      @article = 
+      @article.destroy
+        redirect_to timeline_path(@timeline)
   	end
 
   	def timeline_params

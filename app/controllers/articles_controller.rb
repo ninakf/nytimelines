@@ -13,9 +13,8 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-      @article = Article.search(params[:query])
+      @article = Article.search(params[:query][:timeline])
       @article.destroy
       redirect_to '/'
-  end
 
  end
